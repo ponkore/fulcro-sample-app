@@ -17,6 +17,11 @@
     [:div.ui.attached.segment
      [:div.content
       (comp/ui-placeholder {:w 50 :h 50})
-      (counter/ui-counter {:counter/cnt cnt})
       [:div message]
-      [:div "Some content here would be nice!!!"]]]]))
+      [:div "Some content here would be nice!!!"]]]
+    ;; counter example
+    [:div.ui.attached.segment
+     [:div.content
+      "Counter example" [:span " "]
+      (counter/ui-counter {:counter/cnt cnt})]]
+    ]))

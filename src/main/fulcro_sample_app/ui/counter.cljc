@@ -13,9 +13,7 @@
   "simple counter example component"
   [this {:keys [counter/cnt]}]
   (html
-   [:div
-    [:h4 "This is an example"]
-    [:button {:on-click #(prim/transact! this `[(bump-number {})])}
-     "You've clicked this button " cnt " times."]]))
+   [:button {:on-click #(prim/transact! this `[(bump-number {})])}
+    "You've clicked this button " cnt " times."]))
 
 (def ui-counter (prim/factory Counter))
