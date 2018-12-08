@@ -4,14 +4,16 @@
   :min-lein-version "2.7.0"
 
   :dependencies [[org.clojure/clojure "1.9.0"]
-                 [thheller/shadow-cljs "2.7.3"]
-                 [fulcrologic/fulcro "2.6.15"]
-                 [com.wsscode/pathom "2.2.0-RC3"]
+                 [thheller/shadow-cljs "2.7.8"]
+                 [fulcrologic/fulcro "2.6.18"]
+                 [com.wsscode/pathom "2.2.1"]
                  [ring/ring-defaults "0.3.2"]
-                 [org.clojure/core.async "0.4.474"]
+                 [org.clojure/core.async "0.4.490"]
                  [garden "1.3.6"]
-                 [mount "0.1.14"]
+                 [mount "0.1.15"]
                  [hiccup "1.0.5"]
+
+                 [sablono "0.8.4"]
 
                  [http-kit "2.3.0"]
                  [ring/ring-core "1.7.1"]
@@ -25,7 +27,7 @@
                  [com.google.errorprone/error_prone_annotations "2.3.2"]
                  [com.google.code.findbugs/jsr305 "3.0.2"]
 
-                 [nubank/workspaces "1.0.0-preview9" :scope "test" :exclusions [com.cognitect/transit-java]]
+                 [nubank/workspaces "1.0.1" :scope "test" :exclusions [com.cognitect/transit-java]]
 
                  ; only required if you want to use this for tests
                  [fulcrologic/fulcro-spec "2.1.3" :scope "test"]]
