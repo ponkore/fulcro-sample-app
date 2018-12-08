@@ -20,6 +20,9 @@
                  [bk/ring-gzip "0.3.0"]
                  [bidi "2.1.4"]
 
+                 ;; jdbc
+                 [org.clojure/java.jdbc "0.7.8"]
+
                  [hikari-cp "2.6.0"]
                  ;; https://mvnrepository.com/artifact/postgresql/postgresql
                  ;; [postgresql/postgresql "9.3-1102.jdbc41"]
