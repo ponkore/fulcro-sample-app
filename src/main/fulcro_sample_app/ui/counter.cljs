@@ -2,12 +2,13 @@
   (:require
    [fulcro.client.primitives :as prim :refer [defsc]]
    [fulcro.client.mutations :refer [defmutation]]
-   #?(:cljs [fulcro.client.dom :as dom] :clj [fulcro.client.dom-server :as dom])
+   [fulcro.client.dom :as dom]
    [sablono.core :refer-macros [html]]))
 
 (defmutation bump-number [ignored]
   (action [{:keys [state]}]
-    (swap! state update :counter/cnt inc)))
+    (swap! state update :counter/cnt inc))
+  (remote [env] true))
 
 (defsc Counter
   "simple counter example component"
