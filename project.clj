@@ -20,6 +20,11 @@
                  [bk/ring-gzip "0.3.0"]
                  [bidi "2.1.4"]
 
+                 [hikari-cp "2.6.0"]
+                 ;; https://mvnrepository.com/artifact/postgresql/postgresql
+                 ;; [postgresql/postgresql "9.3-1102.jdbc41"]
+                 [org.postgresql/postgresql "42.2.5"]
+
                  ;; the following 3 are not used directly, but are pinned to ensure consistency.
                  ;; delete then if you upgrade anything and reanalyze deps
                  [commons-codec "1.11"]

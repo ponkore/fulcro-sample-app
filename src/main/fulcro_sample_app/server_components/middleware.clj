@@ -1,6 +1,7 @@
 (ns fulcro-sample-app.server-components.middleware
   (:require
     [fulcro-sample-app.server-components.config :refer [config]]
+    [fulcro-sample-app.server-components.database :refer [database]]
     [mount.core :refer [defstate]]
     [fulcro.server :as server]
     [ring.middleware.defaults :refer [wrap-defaults]]
@@ -31,7 +32,8 @@
         server-parser
         ;; this map is `env`. Put other defstate things in this map and they'll be
         ;; in the mutations/query env on server.
-        {:config config}
+        {:config config
+         :datasource database}
         (:transit-params request))
       (handler request))))
 
