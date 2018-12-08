@@ -12,8 +12,6 @@
 (defsc Counter
   "simple counter example component"
   [this {:keys [counter/cnt]}]
-  {:query         [:counter/cnt]
-   :initial-state {:counter/cnt 0}}
   (html
    [:div
     [:h4 "This is an example"]
