@@ -2,6 +2,8 @@
   (:require
    [fulcro.server :refer [defmutation]]))
 
+(def state (atom {:counter/cnt 0}))
+
 (defmutation bump-number [ignored]
-  (action [{:keys [state]}]
+  (action [_]
     (swap! state update :counter/cnt inc)))
