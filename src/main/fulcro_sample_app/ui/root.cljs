@@ -4,11 +4,13 @@
     [fulcro.client.primitives :as prim :refer [defsc]]
     [fulcro-sample-app.ui.components :as comp]
     [fulcro-sample-app.ui.counter :as counter]
+    [taoensso.timbre :as log]
     [sablono.core :refer [html]]))
 
-(defsc Root [this {:keys [root/message counter/cnt]}]
-  {:query         [:root/message :counter/cnt]
-   :initial-state {:root/message "Hello!" :counter/cnt 0}}
+(defsc Root [this {:keys [root/message counter/counter]}]
+  {:query         [:root/message
+                   {:counter/counter (prim/get-query counter/Counter)}]
+   :initial-state {:root/message "Hello!"}}
   (html
    [:div.ui.segments
     [:div.ui.top.attached.segment
@@ -23,5 +25,5 @@
     [:div.ui.attached.segment
      [:div.content
       "Counter example" [:span " "]
-      (counter/ui-counter {:counter/cnt cnt})]]
+      (counter/ui-counter counter)]]
     ]))
