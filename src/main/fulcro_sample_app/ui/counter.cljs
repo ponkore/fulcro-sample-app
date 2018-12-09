@@ -3,7 +3,7 @@
    [fulcro.client.primitives :as prim :refer [defsc]]
    [fulcro.client.mutations :refer [defmutation]]
    [fulcro.client.dom :as dom]
-   [sablono.core :refer-macros [html]]))
+   [sablono.core :refer [html]]))
 
 (defmutation bump-number [ignored]
   (action [{:keys [state]}]

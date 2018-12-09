@@ -4,7 +4,7 @@
     [fulcro.client.primitives :as prim :refer [defsc]]
     [fulcro-sample-app.ui.components :as comp]
     [fulcro-sample-app.ui.counter :as counter]
-    [sablono.core :refer-macros [html]]))
+    [sablono.core :refer [html]]))
 
 (defsc Root [this {:keys [root/message counter/cnt]}]
   {:query         [:root/message :counter/cnt]
