@@ -7,9 +7,7 @@
 
 (defmutation bump-number [ignored]
   (action [{:keys [state] :as param}]
-    (.log js/console "state =" state)
-    (.log js/console "bump-number.action counter/cnt=" (:counter/cnt @state))
-    (swap! state update :counter/cnt inc))
+    (swap! state update-in [:counter/counter :counter/cnt] inc))
   #_(remote [env] true))
 
 (defsc Counter

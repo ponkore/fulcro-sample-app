@@ -8,9 +8,10 @@
     [sablono.core :refer [html]]))
 
 (defsc Root [this {:keys [root/message counter/counter]}]
-  {:query         [:root/message
+  {:query         [:ui/react-key :root/message
                    {:counter/counter (prim/get-query counter/Counter)}]
-   :initial-state {:root/message "Hello!"}}
+   :initial-state {:root/message "Hello!"
+                   :counter/counter {:counter/cnt nil}}}
   (html
    [:div.ui.segments
     [:div.ui.top.attached.segment
@@ -25,4 +26,4 @@
     [:div.ui.attached.segment
      [:div.content
       "Counter example" [:span " "]
-      (counter/ui-counter {:counter/cnt 10})]]]))
+      (counter/ui-counter counter)]]]))
