@@ -33,10 +33,17 @@
             :minimum-idle       10
             :maximum-pool-size  10
             :pool-name          "db-pool"
-            :adapter            "postgresql"
-            :username           "ideap"
-            :password           "ideap"
-            :database-name      "ideapdb"
+            ;; :adapter            "postgresql"
+            ;; :username           "ideap"
+            ;; :password           "ideap"
+            ;; :database-name      "ideapdb"
+            ;; :server-name        "localhost"
+            ;; :port-number        5432
+            :adapter            "sqlserver"
+            :username           "ssmix"
+            :password           "ssmix2"
+            :database-name      "SSMIX_THU"
             :server-name        "localhost"
-            :port-number        5432
-            :register-mbeans    false}}
+            :port-number        1433
+            :register-mbeans    false
+            }}

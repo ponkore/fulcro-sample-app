@@ -4,7 +4,7 @@
   :min-lein-version "2.7.0"
 
   :dependencies [[org.clojure/clojure "1.9.0"]
-                 [thheller/shadow-cljs "2.7.8"]
+                 [thheller/shadow-cljs "2.7.9"]
                  [fulcrologic/fulcro "2.6.18"]
                  [com.wsscode/pathom "2.2.1"]
                  [ring/ring-defaults "0.3.2"]
@@ -27,6 +27,9 @@
                  ;; https://mvnrepository.com/artifact/postgresql/postgresql
                  ;; [postgresql/postgresql "9.3-1102.jdbc41"]
                  [org.postgresql/postgresql "42.2.5"]
+
+                 ;; sqlserver
+                 [com.microsoft.sqlserver/sqljdbc4 "4.0"]
 
                  ;; the following 3 are not used directly, but are pinned to ensure consistency.
                  ;; delete then if you upgrade anything and reanalyze deps
