@@ -9,12 +9,11 @@
   (let [curval (j/query conn ["select cnt from count_table"])]
     (if (and curval (> (count curval) 0))
       (let [{:keys [cnt]} (first curval)]
-        curval)
+        cnt)
       0)))
 
 (defquery-root :counter/counter
   (value [{:keys [parser query datasource] :as env} params]
-    (log/info "query :counter/cnt called.")
     (j/with-db-connection [conn {:datasource datasource}]
       {:counter/cnt (get-curval conn)})))
 
