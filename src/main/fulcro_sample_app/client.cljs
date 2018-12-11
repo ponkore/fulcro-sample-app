@@ -27,6 +27,6 @@
                                        {:url                "/api"
                                         :request-middleware secured-request-middleware})}
                 :started-callback (fn [app]
-                                    (df/load app :counter/counter counter/Counter))
+                                    (df/load app :root/counter counter/Counter))
                 ))
   (start))

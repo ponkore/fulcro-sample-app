@@ -7,7 +7,7 @@
 
 (defmutation bump-number [ignored]
   (action [{:keys [state] :as param}]
-    (swap! state update-in [:counter/counter :counter/cnt] inc))
+    (swap! state update-in [:root/counter :counter/cnt] inc))
   (remote [env] true))
 
 (defsc Counter

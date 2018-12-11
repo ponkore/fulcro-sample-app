@@ -12,7 +12,7 @@
         cnt)
       0)))
 
-(defquery-root :counter/counter
+(defquery-root :root/counter
   (value [{:keys [parser query datasource] :as env} params]
     (j/with-db-connection [conn {:datasource datasource}]
       {:counter/cnt (get-curval conn)})))

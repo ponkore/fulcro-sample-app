@@ -7,11 +7,11 @@
     [taoensso.timbre :as log]
     [sablono.core :refer [html]]))
 
-(defsc Root [this {:keys [root/message counter/counter]}]
+(defsc Root [this {:keys [root/message root/counter]}]
   {:query         [:ui/react-key :root/message
-                   {:counter/counter (prim/get-query counter/Counter)}]
+                   {:root/counter (prim/get-query counter/Counter)}]
    :initial-state {:root/message "Hello!"
-                   :counter/counter {:counter/cnt nil}}}
+                   :root/counter {:counter/cnt nil}}}
   (html
    [:div.ui.segments
     [:div.ui.top.attached.segment
