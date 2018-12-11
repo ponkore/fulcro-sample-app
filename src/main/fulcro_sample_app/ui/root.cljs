@@ -25,5 +25,4 @@
     [:div.ui.attached.segment
      [:div.content
       "Counter example" [:span " "]
-      (counter/ui-counter counter)]]
-    ]))
+      (counter/ui-counter {:counter/cnt 10})]]]))

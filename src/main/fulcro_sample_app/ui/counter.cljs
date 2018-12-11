@@ -6,17 +6,19 @@
    [sablono.core :refer [html]]))
 
 (defmutation bump-number [ignored]
-  (action [{:keys [state]}]
+  (action [{:keys [state] :as param}]
+    (.log js/console "state =" state)
     (.log js/console "bump-number.action counter/cnt=" (:counter/cnt @state))
     (swap! state update :counter/cnt inc))
-  (remote [env] true))
+  #_(remote [env] true))
 
 (defsc Counter
   "simple counter example component"
   [this {:keys [counter/cnt]}]
-  {:query      [:counter/cnt]}
+  {:query         [:counter/cnt]
+   :initial-state {:counter/cnt 1}}
   (html
    [:button {:on-click #(prim/transact! this `[(bump-number {})])}
-    "You've clicked this button " (-> cnt first :cnt) " times."]))
+    "You've clicked this button [" cnt "] times."]))
 
 (def ui-counter (prim/factory Counter))

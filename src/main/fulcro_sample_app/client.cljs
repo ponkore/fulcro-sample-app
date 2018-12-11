@@ -26,6 +26,7 @@
                 :networking {:remote (net/fulcro-http-remote
                                        {:url                "/api"
                                         :request-middleware secured-request-middleware})}
-                :started-callback (fn [app]
-                                    (df/load app :counter/counter counter/Counter))))
+                ;; :started-callback (fn [app]
+                ;;                     (df/load app :counter/counter counter/Counter))
+                ))
   (start))
