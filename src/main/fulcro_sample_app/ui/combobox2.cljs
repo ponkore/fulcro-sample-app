@@ -13,6 +13,7 @@
   "combobox dropdown list item"
   [this {:keys [ci/id ci/name]}]
   {:query [:ci/id :ci/name]
+   :ident [:comboitem/by-id :ci/id]
    :initial-state (fn [{:keys [ci/id ci/name]}]
                     {:ci/id id :ci/name name})}
   (html

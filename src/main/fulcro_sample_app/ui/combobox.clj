@@ -6,10 +6,9 @@
 
 (defquery-root :root/combobox
   (value [{:keys [parser query datasource] :as env} params]
-    {:cb/selected-id 1
-     :cb/items [{:ci/id 0 :ci/name "あいうえお"}
-                {:ci/id 1 :ci/name "かきくけこ"}
-                {:ci/id 2 :ci/name "さしすせそ"}
-                {:ci/id 3 :ci/name "たちつてと"}]}
-    #_(j/with-db-connection [conn {:datasource datasource}]
-      {:counter/cnt (get-curval conn)})))
+    (j/with-db-connection [conn {:datasource datasource}]
+      {:cb/selected-id 1
+       :cb/items [{:ci/id 0 :ci/name "あいうえお"}
+                  {:ci/id 1 :ci/name "かきくけこ"}
+                  {:ci/id 2 :ci/name "さしすせそ"}
+                  {:ci/id 3 :ci/name "たちつてと"}]})))
