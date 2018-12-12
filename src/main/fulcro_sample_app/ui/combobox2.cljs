@@ -22,15 +22,13 @@
 
 (defsc Combobox
   "simple combobox example component"
-  [this {:keys [cb/selected-id
-                cb/items]}]
+  [this {:keys [cb/selected-id cb/items]}]
   {:query         [:cb/selected-id
                    {:cb/items (prim/get-query ComboItem)}]
    :initial-state (fn [{:keys [cb/selected-id cb/items]}]
-                    {:cb/selected-id selected-id
-                     :cb/items items})}
+                    {:cb/selected-id selected-id :cb/items items})}
   (html
-   [:select {:value selected-id
+   [:select {:value (or selected-id 0) ;; selected-id が undefined になるタイミングが存在してるので予防措置
              :on-change (fn [e]
                           (let [id (-> e .-target .-value)]
                             (prim/transact! this `[(combo-selected {:selected-id ~id})])))}

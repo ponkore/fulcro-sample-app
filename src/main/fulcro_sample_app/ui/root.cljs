@@ -14,13 +14,10 @@
   {:query         [:ui/react-key :root/message
                    {:root/counter (prim/get-query counter/Counter)}
                    {:root/combobox (prim/get-query combobox/Combobox)}]
-   :initial-state {:root/message "Hello!"
-                   :root/counter {:counter/cnt nil}
-                   :root/combobox {:cb/selected-id 1
-                                   :cb/items [{:ci/id 0 :ci/name "あいうえお"}
-                                              {:ci/id 1 :ci/name "かきくけこ"}
-                                              {:ci/id 2 :ci/name "さしすせそ"}
-                                              {:ci/id 3 :ci/name "たちつてと"}]}}}
+   :initial-state (fn [params]
+                    {:root/message "Hello!"
+                     :root/counter (prim/get-initial-state counter/Counter {})
+                     :root/combobox (prim/get-initial-state combobox/Combobox {})})}
   (html
    [:div.ui.segments
     [:div.ui.top.attached.segment

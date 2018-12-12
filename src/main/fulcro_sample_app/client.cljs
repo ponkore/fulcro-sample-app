@@ -2,6 +2,7 @@
   (:require [fulcro.client :as fc]
             [fulcro-sample-app.ui.root :as root]
             [fulcro-sample-app.ui.counter :as counter]
+            [fulcro-sample-app.ui.combobox2 :as combobox]
             [fulcro.client.network :as net]
             [fulcro.client.data-fetch :as df]))
 
@@ -27,6 +28,6 @@
                                        {:url                "/api"
                                         :request-middleware secured-request-middleware})}
                 :started-callback (fn [app]
-                                    (df/load app :root/counter counter/Counter))
-                ))
+                                    (df/load app :root/counter counter/Counter)
+                                    (df/load app :root/combobox combobox/Combobox))))
   (start))
