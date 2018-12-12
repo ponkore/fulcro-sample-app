@@ -5,7 +5,7 @@
    [fulcro.client.dom :as dom]
    [sablono.core :refer [html]]))
 
-(defmutation combo-selected [{:keys [selected-id] :as x}]
+(defmutation combo-selected [{:keys [selected-id]}]
   (action [{:keys [state] :as param}]
     (swap! state assoc-in [:root/combobox :cb/selected-id] selected-id)))
 
