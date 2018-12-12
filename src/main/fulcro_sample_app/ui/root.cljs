@@ -40,8 +40,4 @@
     [:div.ui.attached.segment
      [:div.content
       "Combobox example" [:span " "]
-      (combobox/ui-combobox {:cb/selected-id 0
-                             :cb/items [{:ci/id 0 :ci/name "あいうえお"}
-                                        {:ci/id 1 :ci/name "かきくけこ"}
-                                        {:ci/id 2 :ci/name "さしすせそ"}
-                                        {:ci/id 3 :ci/name "たちつてと"}]})]]]))
+      (combobox/ui-combobox combobox)]]]))

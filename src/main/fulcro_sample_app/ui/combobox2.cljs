@@ -12,7 +12,9 @@
 (defsc ComboItem
   "combobox dropdown list item"
   [this {:keys [ci/id ci/name]}]
-  {:query [:ci/id :ci/name]}
+  {:query [:ci/id :ci/name]
+   :initial-state (fn [{:keys [ci/id ci/name]}]
+                    {:ci/id id :ci/name name})}
   (html
    [:option {:value id} name]))
 
@@ -22,13 +24,16 @@
   "simple combobox example component"
   [this {:keys [cb/selected-id
                 cb/items]}]
-  {:query [:cb/selected-id
-           {:cb/items (prim/get-query ComboItem)}]}
+  {:query         [:cb/selected-id
+                   {:cb/items (prim/get-query ComboItem)}]
+   :initial-state (fn [{:keys [cb/selected-id cb/items]}]
+                    {:cb/selected-id selected-id
+                     :cb/items items})}
   (html
    [:select {:value selected-id
              :on-change (fn [e]
                           (let [id (-> e .-target .-value)]
                             (prim/transact! this `[(combo-selected {:selected-id ~id})])))}
-    (mapv ui-combo-item items)]))
+    (map ui-combo-item items)]))
 
 (def ui-combobox (prim/factory Combobox))
