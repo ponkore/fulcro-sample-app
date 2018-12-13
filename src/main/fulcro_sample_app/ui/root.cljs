@@ -4,7 +4,7 @@
     [fulcro.client.primitives :as prim :refer [defsc]]
     [fulcro-sample-app.ui.components :as comp]
     [fulcro-sample-app.ui.counter :as counter]
-    [fulcro-sample-app.ui.combobox2 :as combobox]
+    [fulcro-sample-app.ui.combobox :as combobox]
     [taoensso.timbre :as log]
     [sablono.core :refer [html]]))
 

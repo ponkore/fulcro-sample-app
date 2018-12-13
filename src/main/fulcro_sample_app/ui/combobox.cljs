@@ -1,4 +1,4 @@
-(ns fulcro-sample-app.ui.combobox2
+(ns fulcro-sample-app.ui.combobox
   (:require
    [fulcro.client.primitives :as prim :refer [defsc]]
    [fulcro.client.mutations :refer [defmutation]]

@@ -2,7 +2,7 @@
   (:require [fulcro.client :as fc]
             [fulcro-sample-app.ui.root :as root]
             [fulcro-sample-app.ui.counter :as counter]
-            [fulcro-sample-app.ui.combobox2 :as combobox]
+            [fulcro-sample-app.ui.combobox :as combobox]
             [fulcro.client.network :as net]
             [fulcro.client.data-fetch :as df]))
 
