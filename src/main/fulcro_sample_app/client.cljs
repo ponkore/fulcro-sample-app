@@ -1,7 +1,10 @@
 (ns fulcro-sample-app.client
   (:require [fulcro.client :as fc]
             [fulcro-sample-app.ui.root :as root]
-            [fulcro.client.network :as net]))
+            [fulcro-sample-app.ui.counter :as counter]
+            [fulcro-sample-app.ui.combobox :as combobox]
+            [fulcro.client.network :as net]
+            [fulcro.client.data-fetch :as df]))
 
 (defonce app (atom nil))
 
@@ -23,5 +26,8 @@
                 ;; See middleware.clj to see how the token is embedded into the HTML
                 :networking {:remote (net/fulcro-http-remote
                                        {:url                "/api"
-                                        :request-middleware secured-request-middleware})}))
+                                        :request-middleware secured-request-middleware})}
+                :started-callback (fn [app]
+                                    (df/load app :root/counter counter/Counter)
+                                    (df/load app :root/combobox combobox/Combobox))))
   (start))

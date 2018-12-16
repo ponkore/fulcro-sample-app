@@ -1,7 +1,8 @@
 (ns fulcro-sample-app.ui.components
   (:require
     [fulcro.client.primitives :as prim :refer [defsc]]
-    [fulcro.client.dom :as dom]))
+    [fulcro.client.dom :as dom]
+    [sablono.core :refer-macros [html]]))
 
 (defsc PlaceholderImage
   "Generates an SVG image placeholder of the given size and with the given label
@@ -13,10 +14,11 @@
   "
   [this {:keys [w h label]}]
   (let [label (or label (str w "x" h))]
-    (dom/svg #js {:width w :height h}
-      (dom/rect #js {:width w :height h :style #js {:fill        "rgb(200,200,200)"
-                                                    :strokeWidth 2
-                                                    :stroke      "black"}})
-      (dom/text #js {:textAnchor "middle" :x (/ w 2) :y (/ h 2)} label))))
+    (html
+     [:svg {:width w :height h}
+      [:rect {:width w :height h :style {:fill         "rgb(200,200,200)"
+                                         :stroke-width 2
+                                         :stroke       "black"}}]
+      [:text {:text-anchor "middle" :x (/ w 2) :y (/ h 2)} label]])))
 
 (def ui-placeholder (prim/factory PlaceholderImage))
