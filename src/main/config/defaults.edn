@@ -34,9 +34,9 @@
             :maximum-pool-size  10
             :pool-name          "db-pool"
             :adapter            "postgresql"
-            :username           "ideap"
-            :password           "ideap"
-            :database-name      "ideapdb"
+            :username           "**"
+            :password           "**"
+            :database-name      "**"
             :server-name        "localhost"
             :port-number        5432
             :register-mbeans    false
